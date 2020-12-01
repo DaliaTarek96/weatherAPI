@@ -3,7 +3,7 @@
 // Create a new date instance dynamically with JS
 
 // Personal API Key for OpenWeatherMap API
-const weatherAPI = 'b137dc878df1008f06924c615831191a';
+const weatherAPI = '&appid=b137dc878df1008f06924c615831191a&units=imperial';
 const baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
 
 // Event listener to add function to existing HTML DOM element
@@ -33,7 +33,7 @@ function weatherInfo() {
 }
 /* Function to GET Web API Data*/
 const getWeather = async (baseURL, zip, weatherAPI) => {
-    const weather = await fetch(baseURL + zip + '&appid=' + weatherAPI);
+    const weather = await fetch(baseURL + zip  + weatherAPI);
     try {
         let weatherData = await weather.json();
         return weatherData;
